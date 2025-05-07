@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PomoDoro Timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>PomoDoro Timer</h1>
+    
+    <div class="timer-display">
+      <div class="progress-ring">
+        <svg height="200" width="200">
+          <circle class="progress-ring-circle-bg" cx="100" cy="100" r="90" />
+          <circle class="progress-ring-circle" cx="100" cy="100" r="90" />
+        </svg>
+        <div id="time">25:00</div>
+      </div>
+    </div>
+    
+    <div class="mode-selector">
+      <button id="pomodoro" class="mode-btn active">Focus</button>
+      <button id="shortBreak" class="mode-btn">Short Break</button>
+      <button id="longBreak" class="mode-btn">Long Break</button>
+    </div>
+    
+    <div class="buttons">
+      <button id="startBtn" class="control-btn">Start</button>
+      <button id="pauseBtn" class="control-btn" disabled>Pause</button>
+      <button id="resetBtn" class="control-btn">Reset</button>
+    </div>
+    
+    <div class="settings">
+      <button id="settingsBtn" class="icon-btn">⚙️</button>
+      <div id="settingsPanel" class="settings-panel hidden">
+        <h3>Timer Settings</h3>
+        <div class="setting-item">
+          <label for="focusDuration">Focus Duration (min):</label>
+          <input type="number" id="focusDuration" min="1" max="60" value="25">
+        </div>
+        <div class="setting-item">
+          <label for="shortBreakDuration">Short Break (min):</label>
+          <input type="number" id="shortBreakDuration" min="1" max="30" value="5">
+        </div>
+        <div class="setting-item">
+          <label for="longBreakDuration">Long Break (min):</label>
+          <input type="number" id="longBreakDuration" min="1" max="60" value="15">
+        </div>
+        <div class="setting-item">
+          <label for="autoStartBreaks">Auto-start breaks:</label>
+          <input type="checkbox" id="autoStartBreaks">
+        </div>
+        <div class="setting-item">
+          <label for="autoStartPomodoros">Auto-start pomodoros:</label>
+          <input type="checkbox" id="autoStartPomodoros">
+        </div>
+        <button id="saveSettings" class="control-btn">Save</button>
+      </div>
+    </div>
+    
+    <div class="session-counter">
+      Sessions completed: <span id="sessionCount">0</span>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
